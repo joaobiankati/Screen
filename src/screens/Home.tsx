@@ -24,7 +24,11 @@ export default function Home(){
                 </TouchableOpacity>    
             </View> 
             
-            <Text style={styles.buy}>Compras Pendentes</Text>
+            <Text style={styles.listTitle}>Compras Pendentes</Text>
+            
+            <View style={styles.list}>
+            <Text style={styles.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras.</Text>
+            </View>
         </View>
 
     )
@@ -51,12 +55,11 @@ const styles = StyleSheet.create({
         lineHeight: 28.8,
 
     },
-    buy: {
-        color: "#000",
-        fontSize: 24,
+    listTitle: {
+        fontSize: 20,
         fontWeight: "bold",
-        lineHeight: 28.8,
-        marginTop: 36
+        lineHeight: 24,
+        marginBottom: 36
         
     },
     input: {
@@ -70,9 +73,11 @@ const styles = StyleSheet.create({
     
     },
     form : {
+        width: "100%",
         flexDirection: "row",
-        justifyContent: "space-between",
         marginTop: 18,
+
+        marginBottom: 36,
     },
 
     button: {
@@ -87,5 +92,17 @@ const styles = StyleSheet.create({
     textButton: {
         color: "#fff",
         fontSize: 24,
+    },
+
+    listEmptyText: {
+        fontSize: 16,
+        fontWeight: "normal",
+        lineHeight: 19.2,
+        textAlign: "center",
+    },
+
+    list: {
+        flex: 1,
+        justifyContent: "center",
     }
 })

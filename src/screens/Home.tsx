@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Product } from "./components/Product";
 
 export default function Home(){
@@ -76,13 +76,25 @@ export default function Home(){
             <Text style={styles.listTitle}>Compras Pendentes</Text>
             
             <View style={styles.list}>
-            {/* <Text style={styles.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras.</Text> */}
+            {/* <Text style={styles.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras.</Text>
 
             <ScrollView>
-            {
-                products.map((product) => <Product key={product} name={product} onRemove={() => handleProductRemove(product)} />)
-            }
-            </ScrollView>
+                {
+                    products.map((product) => <Product key={product} name={product} onRemove={() => handleProductRemove(product)} />)
+                }
+            </ScrollView> */}
+            <FlatList
+                data={products}
+                keyExtractor={(item) => item}
+                renderItem={({item}) => <Product name={item} onRemove={() => handleProductRemove(item)} />}
+                showsVerticalScrollIndicator={false}
+                ListEmptyComponent={() => ( 
+                    <Text style={styles.listEmptyText}>
+                        Comprou todos os produtos? Adicione produtos a sua lista de compras.
+                    </Text>
+
+                )}
+            />
             </View>
         </View>
 

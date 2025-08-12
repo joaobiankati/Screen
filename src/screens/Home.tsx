@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Product } from "./components/Product";
 
 export default function Home(){
 
     function handleAddProduct(){
+
+    }
+
+    function handleProductRemove(name: String) {
+        console.log("Você cliclou no botão de remover Produto")
     }
 
     return (
@@ -27,7 +33,9 @@ export default function Home(){
             <Text style={styles.listTitle}>Compras Pendentes</Text>
             
             <View style={styles.list}>
-            <Text style={styles.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras.</Text>
+            {/* <Text style={styles.listEmptyText}>Comprou todos os produtos? Adicione produtos a sua lista de compras.</Text> */}
+
+            <Product name="iPhone" onRemove={() => handleProductRemove("iPhone")} />
             </View>
         </View>
 

@@ -6,8 +6,6 @@ interface Props {
 }
 
 export function Product(props: Props) {
-
-
     return (
         <View style={styles.container}>
             <Text style={styles.name}>{props.name}</Text>
@@ -30,6 +28,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderBottomLeftRadius: 5,
         borderTopLeftRadius: 5,
+        marginBottom: 8,
     },
 
     name: {

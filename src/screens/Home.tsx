@@ -86,13 +86,13 @@ export default function Home(){
             <FlatList
                 data={products}
                 keyExtractor={(item) => item}
+                contentContainerStyle={styles.list}
                 renderItem={({item}) => <Product name={item} onRemove={() => handleProductRemove(item)} />}
                 showsVerticalScrollIndicator={false}
                 ListEmptyComponent={() => ( 
                     <Text style={styles.listEmptyText}>
                         Comprou todos os produtos? Adicione produtos a sua lista de compras.
                     </Text>
-
                 )}
             />
             </View>
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
     },
 
     list: {
-        flex: 1,
+        flexGrow: 1,
         justifyContent: "center",
     }
 })

@@ -9,7 +9,6 @@ export function Product(props: Props) {
     return (
         <View style={styles.container}>
             <Text style={styles.name}>{props.name}</Text>
-
             <TouchableOpacity 
                 style={styles.button}
                 onPress={props.onRemove}
